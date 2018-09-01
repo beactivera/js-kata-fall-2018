@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tweets</title>
+    <style>
+        #tweets {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="tweets">
+
+    </main>
+
+    <template id="tweetTemplate">
+        <article class="tweet">
+            <h1>this is title</h1>
+            <h2>this is made by a
+                <span>user</span>
+            </h2>
+
+        </article>
+    </template>
+
+    <script>
+        window.addEventListener('load', () => {
+            let tweetsContainer = document.querySelector('#tweets');
+            const template = document.querySelector('#tweetTemplate').content;
+
+
+            fetch("https://kea-alt-del.dk/twitter/api/?hashtag=es6").then(result => result.json()).then(data => {
+                console.log(data);
+                data.statuses.forEach(showTweet);
+            })
+
+
+            function showTweet(tweet) {
+                const clone = template.cloneNode(true);
+                clone.querySelector('h1').textContent = tweet.text;
+                clone.querySelector('h2 span').textContent = tweet.user.screen_name;
+
+                tweetsContainer.appendChild(clone);
+
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
