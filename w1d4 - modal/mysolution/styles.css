@@ -17,7 +17,7 @@ body {
   align-items: center;
 
   position: absolute;
-  top: 0;
+  top: 20vh;
   left: 0;
 }
 
@@ -25,6 +25,6 @@ body {
   max-width: 80vw;
 }
 
-.hidden {
+.hide {
   visibility: hidden;
 }
