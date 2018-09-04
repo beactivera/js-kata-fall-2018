@@ -2,23 +2,23 @@
 const modal = document.querySelector("#modal_container");
 const closeBtn = document.querySelector("#closebutton");
 
-const pdk1 = document.querySelector("#product_1");
-const pdk2 = document.querySelector("#product_2");
-const pdk3 = document.querySelector("#product_3");
-const pdk4 = document.querySelector("#product_4");
-const pdk5 = document.querySelector("#product_5");
+// create an array from products
+const products = document.querySelectorAll("article");
+console.log(products);
 
-const products = [pdk1, pdk2, pdk3, pdk4, pdk5];
-
+// looping through elements in products and add/remove display modal
 products.forEach(element => {
   for (let i = 0; i < products.length; i++) {
-    let details = products[i].lastChild;
+    let details = products[i].lastElementChild.firstElementChild;
+    // console.log(details);
     details.addEventListener("click", showModal);
 
     function showModal() {
       console.log("Show modal");
       modal.classList.remove("hide");
       closeBtn.addEventListener("click", hideModal);
+      modal.querySelector("h1").textContent =
+        products[i].firstElementChild.innerHTML;
 
       function hideModal() {
         console.log("Hide modal");
