@@ -1,6 +1,5 @@
 // I want a function findAll( arr, search ) that I can use to look for all occurences of search in the array arr. The function must return another array, with the indexes of each occurence of search.
 
-// example of array
 const animals = [
   "dog",
   "cat",
@@ -14,31 +13,32 @@ const animals = [
 ];
 const catsAt = findAll(animals, "cat");
 console.log(catsAt);
-
-// function findAll()
 let arr;
 let search;
 function findAll(arr, search) {
   let finalArr;
-  // we need to specify that newArr is an array
   let newArr = [];
-  // loop through the array
   for (let i = 0; i < arr.length; i++) {
-    // find 'cat'
     if (arr[i] === search) {
-      // numer of index
       console.log(i);
-      // console.log(arr[i]); // = cat
-      // if we could find more than one 'cat'
-      if (i < 2) {
-        newArr.push(`${i}`);
-        // console.log(newArr);
+      console.log(arr[i]);
+      // declare first index
+      let indexOfFirst = arr.indexOf(search);
+      console.log(indexOfFirst);
+      if (i < 1) {
+        // put value of index in the variable 'sol'
+        let sol = arr.indexOf(arr[i]);
+        console.log(sol);
+        // change variable sol to a string called 'a'
+        let a = sol.toString();
+        console.log(a);
+        // add to newArr the string
+        newArr.push(`${a}`);
+        console.log(newArr);
       } else {
-        newArr.push(`${i}`);
-        // console.log(newArr);
       }
     }
-    finalArr = newArr;
+    finalArr = newArr.push();
   }
   return finalArr;
 }
