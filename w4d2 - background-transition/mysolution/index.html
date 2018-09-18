@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bg Transitions</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: black;
+            transition-property: background-color;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <p></p>
+
+    <script>
+        let divBox1 = document.querySelector('div');
+        console.log(divBox1)
+        divBox1.addEventListener('click', changeColor)
+
+        function changeColor() {
+            divBox1.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)} ,${Math.floor(Math.random() * 255)}  ,${Math.floor(Math.random() * 255)} )`;
+            let p = document.querySelector('p');
+            p.textContent = `background-color: ${divBox1.style.backgroundColor}`;
+        }
+
+    </script>
+</body>
+
+</html>
