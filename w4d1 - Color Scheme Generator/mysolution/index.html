@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Generator</title>
+    <style>
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #box1 div,
+        #box2 div {
+            position: relative;
+            margin: 10px;
+            display: block;
+            width: 300px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <div id='box1'>
+            <h1>RGB</h1>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- <div id='box2'>
+            <h1>HSL</h1>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div> -->
+    </div>
+
+    <script>
+        // RGB
+        const divBox1 = document.querySelector('#box1');
+        console.log(divBox1)
+        const divArr = Array.from(divBox1.querySelectorAll('#box1 div'))
+        console.log(divArr)
+
+        divArr.forEach(element => {
+            // console.log(element)
+            element.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)} ,${Math.floor(Math.random() * 255)}  ,${Math.floor(Math.random() * 255)} )`;
+            console.log(`background-color: ${element.style.backgroundColor}`)
+            const p = document.createElement('p');
+            p.textContent = `background-color: ${element.style.backgroundColor}`;
+            element.appendChild(p)
+        })
+
+        // //HSL
+        // const divBox2 = document.querySelector('#box2');
+        // console.log(divBox2)
+        // const divArr2 = Array.from(divBox2.querySelectorAll('#box2 div'))
+        // console.log(divArr2)
+
+        // divArr2.forEach(element2 => {
+        //     // console.log(element)
+        //     element2.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)} ,${Math.floor(Math.random() * 100)}% ,${Math.floor(Math.random() * 100)}% )`;
+        //     console.log(`background-color: ${element2.style.backgroundColor}`)
+        //     const p = document.createElement('p');
+        //     p.textContent = `background-color: ${element2.style.backgroundColor}`;
+        //     element2.appendChild(p)
+        // })
+
+
+
+    </script>
+
+</body>
+
+</html>

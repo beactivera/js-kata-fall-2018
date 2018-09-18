@@ -19,13 +19,13 @@ function findAll(arr, search) {
   let finalArr;
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === search) {
+    if(arr[i] === search) {
       console.log(i);
       console.log(arr[i]);
       // declare first index
       let indexOfFirst = arr.indexOf(search);
-      console.log(indexOfFirst);
-      if (i < 1) {
+      //console.log(indexOfFirst);
+      if (i > 1) {
         // put value of index in the variable 'sol'
         let sol = arr.indexOf(arr[i]);
         console.log(sol);
