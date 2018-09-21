@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Is it your number <span></span>
+        <br>
+        <button>Yes</button>
+        <button id="no">No</button>
+    </div>
+    <script>
+        document.getElementById('no').addEventListener('click', () => {
+            let str = '';
+            for (let i = 0; i < 10; i++) {
+                str = str.padStart(i, [Math.floor(Math.random() * 9)]);
+            }
+            console.log(str);
+            document.querySelector('span').textContent = str;
+
+        })
+
+    </script>
+</body>
+
+</html>
