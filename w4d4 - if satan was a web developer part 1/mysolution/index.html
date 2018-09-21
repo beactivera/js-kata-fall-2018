@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <button>
+            +
+        </button>
+    </div>
+    <script>
+        let btn = document.querySelector('button');
+
+        btn.addEventListener('click', createNumber)
+        let num = 0;
+        function createNumber() {
+            // console.log(num.toString())
+            // let arrNum = Array.from(num.toString());
+            // console.log(arrNum)
+            // let str = [];
+            // let finalnumString = ['(216) '];
+            // for (let i = 0; i < 7 - arrNum.length; i++) {
+
+            //     str.unshift('0');
+            //     console.log(str)
+            //     finalnumString.push(str[i])
+            // }
+            // finalnumString.push(arrNum.toString())
+            // console.log(finalnumString);
+            // num += 1;
+
+            num += 1;
+            let numStr = num.toString();
+            let prefStr = "(216) ";
+            let len = numStr.length;
+            for (let i = 0; i < 7 - len; i++) {
+                numStr = "0" + numStr;
+            }
+            let finalnumString = prefStr + numStr;
+            finalnumString = finalnumString.substring(0, 10) + "-" + finalnumString.substring(10, 14);
+            console.log(finalnumString);
+
+
+            let p = document.createElement('p');
+            p.textContent = finalnumString;
+            document.getElementById('box').appendChild(p)
+
+
+        }
+
+    </script>
+</body>
+
+</html>
